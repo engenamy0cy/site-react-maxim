@@ -1,0 +1,18 @@
+.block{
+    background-image: url(/imba_fob.png);
+    position: relative;
+    background-size: cover;
+    height: 500px;
+    
+    margin: 20px 32px;
+    
+}
+
+.text{
+    position: absolute;
+    padding: 16px;
+    left:24px;
+    background-color: rgba(253, 252, 250, 0.425);
+    bottom: 24px;
+    border-radius: 8px;
+}

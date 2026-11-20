@@ -1,0 +1,15 @@
+.header{
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(0, 0, 0) ;
+    padding: 8px 24px;
+    
+}
+
+.logo{
+    width: 45px;    
+}
+
+
+
+
