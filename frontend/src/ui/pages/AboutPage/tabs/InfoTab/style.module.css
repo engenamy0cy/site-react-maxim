@@ -1,0 +1,25 @@
+.tab h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #2b1d12;
+}
+
+.lead {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #444;
+    margin-bottom: 16px;
+}
+
+.list {
+    margin: 0 0 16px 20px;
+    color: #444;
+    line-height: 1.8;
+}
+
+.note {
+    font-size: 14px;
+    color: #8a7765;
+    border-top: 1px solid #eee;
+    padding-top: 12px;
+}

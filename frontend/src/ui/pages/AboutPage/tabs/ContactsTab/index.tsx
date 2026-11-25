@@ -1,16 +1,44 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import style from './style.module.css'
 
+/**
+ * Таб «Контакты»
+ * Интерактив: часы обновляются каждую секунду (useState + useEffect),
+ * адрес скрывается/показывается по кнопке (useState).
+ */
 export const ContactsTab = () => {
-  const [show, setShow] = useState(false)
+    const [showAddress, setShowAddress] = useState(false)
+    const [now, setNow] = useState(new Date())
 
-  return (
-    <div>
-      <h2>Контакты</h2>
-      <p>Телефон: +7 (912) 345-67-89</p>
-      <button onClick={() => setShow(!show)}>
-        {show ? 'Скрыть адрес' : 'Показать адрес'}
-      </button>
-      {show && <p>Адрес: г. Оренбург, ул. Свободина 4/3</p>}
-    </div>
-  )
+    useEffect(() => {
+        const timer = setInterval(() => setNow(new Date()), 1000)
+        return () => clearInterval(timer)
+    }, [])
+
+    return (
+        <div className={style.tab}>
+            <h2>Контакты</h2>
+
+            <ul className={style.list}>
+                <li><strong>Телефон:</strong> +7 (912) 345-67-89</li>
+                <li><strong>Email:</strong> info@kalyannaya-lavka.ru</li>
+                <li><strong>Режим работы:</strong> ежедневно, 10:00–22:00</li>
+            </ul>
+
+            <button
+                className={style.button}
+                onClick={() => setShowAddress(!showAddress)}
+            >
+                {showAddress ? 'Скрыть адрес' : 'Показать адрес'}
+            </button>
+            {showAddress && (
+                <p className={style.address}>г. Оренбург, ул. Свободина, 4/3</p>
+            )}
+
+            <div className={style.clock}>
+                <span>Сейчас: {now.toLocaleTimeString('ru-RU')}</span>
+                <small>Время обновляется каждую секунду</small>
+            </div>
+        </div>
+    );
 }
