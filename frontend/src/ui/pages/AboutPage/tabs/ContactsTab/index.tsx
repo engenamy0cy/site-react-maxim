@@ -34,11 +34,6 @@ export const ContactsTab = () => {
             {showAddress && (
                 <p className={style.address}>г. Оренбург, ул. Свободина, 4/3</p>
             )}
-
-            <div className={style.clock}>
-                <span>Сейчас: {now.toLocaleTimeString('ru-RU')}</span>
-                <small>Время обновляется каждую секунду</small>
-            </div>
         </div>
     );
 }

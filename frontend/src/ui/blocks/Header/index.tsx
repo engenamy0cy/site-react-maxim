@@ -23,7 +23,7 @@ export const Header:React.FC = () => {
                 <HeaderLink href="" text="о нас"/>
                 <HeaderLink href="" text="жижки"/>
                 <HeaderLink href="" text="вейпы"/>
-               
+
                 
             </nav>
         </header>
